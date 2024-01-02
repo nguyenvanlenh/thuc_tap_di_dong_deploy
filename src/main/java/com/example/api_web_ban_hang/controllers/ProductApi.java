@@ -1,7 +1,9 @@
 package com.example.api_web_ban_hang.controllers;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
+import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -43,7 +45,8 @@ public class ProductApi {
 			@RequestParam(name = "quantity", required = false) Integer quantity) {
 				return ResponseEntity.ok()
 				.body(new ResponseObject(productService.findByNameProduct(input).stream()
-								.limit(quantity != null ? quantity : Long.MAX_VALUE).toString(),
+								.limit(quantity != null ? quantity : Long.MAX_VALUE)
+										.collect(Collectors.toList())
 						HttpStatus.OK.name(), HttpStatus.OK.getReasonPhrase()));
 	}
 
