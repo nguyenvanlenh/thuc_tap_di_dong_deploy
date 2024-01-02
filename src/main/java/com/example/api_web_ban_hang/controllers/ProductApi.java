@@ -44,10 +44,10 @@ public class ProductApi {
 	public ResponseEntity<ResponseObject> findProductById(@RequestParam(name = "name") String input,
 			@RequestParam(name = "quantity", required = false) Integer quantity) {
 				return ResponseEntity.ok()
-				.body(new ResponseObject(productService.findByNameProduct(input).stream()
+				.body(new ResponseObject(HttpStatus.OK.name(), HttpStatus.OK.getReasonPhrase(),productService.findByNameProduct(input).stream()
 								.limit(quantity != null ? quantity : Long.MAX_VALUE)
 										.collect(Collectors.toList())
-						HttpStatus.OK.name(), HttpStatus.OK.getReasonPhrase()));
+						));
 	}
 
 	@GetMapping("/fitter-product-hot")
