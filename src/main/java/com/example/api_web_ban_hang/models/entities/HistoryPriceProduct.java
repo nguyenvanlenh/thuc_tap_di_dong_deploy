@@ -1,9 +1,14 @@
 package com.example.api_web_ban_hang.models.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "history_price_products")
 public class HistoryPriceProduct {
@@ -30,60 +35,4 @@ public class HistoryPriceProduct {
 
     @Column(name = "create_at", nullable = false)
     private LocalDateTime createdAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public BigDecimal getListedPrice() {
-        return listedPrice;
-    }
-
-    public void setListedPrice(BigDecimal listedPrice) {
-        this.listedPrice = listedPrice;
-    }
-
-    public BigDecimal getPromotionalPrice() {
-        return promotionalPrice;
-    }
-
-    public void setPromotionalPrice(BigDecimal promotionalPrice) {
-        this.promotionalPrice = promotionalPrice;
-    }
-
-    public LocalDateTime getTimeStart() {
-        return timeStart;
-    }
-
-    public void setTimeStart(LocalDateTime timeStart) {
-        this.timeStart = timeStart;
-    }
-
-    public LocalDateTime getTimeEnd() {
-        return timeEnd;
-    }
-
-    public void setTimeEnd(LocalDateTime timeEnd) {
-        this.timeEnd = timeEnd;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
 }

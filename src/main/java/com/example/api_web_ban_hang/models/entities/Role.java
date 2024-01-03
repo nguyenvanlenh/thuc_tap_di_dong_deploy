@@ -1,7 +1,12 @@
 package com.example.api_web_ban_hang.models.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -12,20 +17,4 @@ public class Role {
 
     @Column(name = "name_role", nullable = false)
     private String nameRole;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNameRole() {
-        return nameRole;
-    }
-
-    public void setNameRole(String nameRole) {
-        this.nameRole = nameRole;
-    }
 }

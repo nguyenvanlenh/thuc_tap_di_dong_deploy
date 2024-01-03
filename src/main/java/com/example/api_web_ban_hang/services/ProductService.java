@@ -64,13 +64,15 @@ public class ProductService implements IGetProductService, ICountProductService 
         // convert thành DTO dùng StreamAPI trong Java 8
         return productList.stream().map(product -> {
 
-            ProductDTO_Ver1 productDTO = new ProductDTO_Ver1();
-            productDTO.setId_product(product.getId());
-            productDTO.setName_product(product.getNameProduct());
-            productDTO.setListed_price(product.getListedPrice());
-            productDTO.setPromotional_price(product.getPromotionalPrice());
-            productDTO.setList_image(convertImageProductToDTO(product.getImageProducts()));
-            productDTO.setId_status_product(product.getIdStatusProduct());
+            ProductDTO_Ver1 productDTO = ProductDTO_Ver1.builder()
+                    .id_product(product.getId())
+                    .name_product(product.getNameProduct())
+                    .listed_price(product.getListedPrice())
+                    .promotional_price(product.getPromotionalPrice())
+                    .list_image(convertImageProductToDTO(product.getImageProducts())) // Gọi phương thức chuyển đổi thành DTO
+                    .id_status_product(product.getIdStatusProduct())
+                    .build();
+
             return productDTO;
         }).collect(Collectors.toList());
     }
@@ -130,13 +132,15 @@ public class ProductService implements IGetProductService, ICountProductService 
         // convert thành DTO dùng StreamAPI trong Java 8
         return productList.stream().map(product -> {
 
-            ProductDTO_Ver1 productDTO = new ProductDTO_Ver1();
-            productDTO.setId_product(product.getId());
-            productDTO.setName_product(product.getNameProduct());
-            productDTO.setListed_price(product.getListedPrice());
-            productDTO.setPromotional_price(product.getPromotionalPrice());
-            productDTO.setList_image(convertImageProductToDTO(product.getImageProducts()));
-            productDTO.setId_status_product(product.getIdStatusProduct());
+            ProductDTO_Ver1 productDTO = ProductDTO_Ver1.builder()
+                    .id_product(product.getId())
+                    .name_product(product.getNameProduct())
+                    .listed_price(product.getListedPrice())
+                    .promotional_price(product.getPromotionalPrice())
+                    .list_image(convertImageProductToDTO(product.getImageProducts())) // Gọi phương thức chuyển đổi thành DTO
+                    .id_status_product(product.getIdStatusProduct())
+                    .build();
+
             return productDTO;
         }).collect(Collectors.toList());
     }

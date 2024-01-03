@@ -1,6 +1,12 @@
 package com.example.api_web_ban_hang.models.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "size_products")
 public class SizeProduct {
@@ -20,37 +26,5 @@ public class SizeProduct {
 
     @Column(name = "quantity_available", nullable = false)
     private int quantityAvailable;
-
-    public SizeProductId getId() {
-        return id;
-    }
-
-    public void setId(SizeProductId id) {
-        this.id = id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public void setSize(Size size) {
-        this.size = size;
-    }
-
-    public int getQuantityAvailable() {
-        return quantityAvailable;
-    }
-
-    public void setQuantityAvailable(int quantityAvailable) {
-        this.quantityAvailable = quantityAvailable;
-    }
 }
 

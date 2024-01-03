@@ -1,7 +1,11 @@
 package com.example.api_web_ban_hang.models.entities;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "type_products")
 public class TypeProduct {
@@ -13,20 +17,4 @@ public class TypeProduct {
 
     @Column(name = "name_type", nullable = false)
     private String nameType;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNameType() {
-        return nameType;
-    }
-
-    public void setNameType(String nameType) {
-        this.nameType = nameType;
-    }
 }

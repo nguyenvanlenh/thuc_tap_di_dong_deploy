@@ -17,30 +17,36 @@ import java.util.stream.Collectors;
 
 public class MapperProduct {
     public static ProductDTO mapperProductToDTO(Product product){
-        ProductDTO build = new ProductDTO();
-        build.setId_product(product.getId());
-        build.setName_product(product.getNameProduct());
-        build.setStar_review(product.getStarReview());
-        build.setListed_price(product.getListedPrice());
-        build.setPromotional_price(product.getPromotionalPrice());
-        build.setBrand(product.getBrand().getNameBrand());
-        build.setType(product.getTypeProduct().getNameType());
-        build.setList_image(mapperImageToDTO(product.getImageProducts()));
-        build.setList_size(mappperSizeToDTO(product.getListSizes()));
-        build.setList_comment(new ArrayList<>(product.getComments()));
+        ProductDTO build = ProductDTO.builder()
+                .id_product(product.getId())
+                .name_product(product.getNameProduct())
+                .star_review(product.getStarReview())
+                .listed_price(product.getListedPrice())
+                .promotional_price(product.getPromotionalPrice())
+                .brand(product.getBrand().getNameBrand())
+                .type(product.getTypeProduct().getNameType())
+                .list_image(mapperImageToDTO(product.getImageProducts()))
+                .list_size(mappperSizeToDTO(product.getListSizes()))
+                .list_comment(new ArrayList<>(product.getComments()))
+                .build();
         return build;
     }
     public static List<ImageDTO> mapperImageToDTO(Set<ImageProduct> list_image){
 
         return list_image.stream().map(img->{
-            return new ImageDTO(img.getId(), img.getPath());
+            return ImageDTO.builder()
+                    .id_image(img.getId())
+                    .path_image(img.getPath())
+                    .build();
         }).collect(Collectors.toList());
 
     }
     public static List<SizeDTO> mappperSizeToDTO(Set<SizeProduct> list_size){
-
         return list_size.stream().map(size->{
-            return new SizeDTO(size.getSize().getNameSize(), size.getQuantityAvailable());
+            return SizeDTO.builder()
+                    .name_size(size.getSize().getNameSize())
+                    .quantity_available(size.getQuantityAvailable())
+                    .build();
         }).collect(Collectors.toList());
     }
 

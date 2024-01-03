@@ -17,44 +17,4 @@ public class PagedResponse_Ver1<T> {
         this.total_items = total_items;
         this.data = data;
     }
-
-    public int getCurrent_page() {
-        return current_page;
-    }
-
-    public void setCurrent_page(int current_page) {
-        this.current_page = current_page;
-    }
-
-    public int getPage_size() {
-        return page_size;
-    }
-
-    public void setPage_size(int page_size) {
-        this.page_size = page_size;
-    }
-
-    public int getTotal_pages() {
-        return total_pages;
-    }
-
-    public void setTotal_pages(int total_pages) {
-        this.total_pages = total_pages;
-    }
-
-    public int getTotal_items() {
-        return total_items;
-    }
-
-    public void setTotal_items(int total_items) {
-        this.total_items = total_items;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
 }

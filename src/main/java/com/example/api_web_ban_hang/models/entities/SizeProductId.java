@@ -1,10 +1,14 @@
 package com.example.api_web_ban_hang.models.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+@Getter
+@Setter
 @Embeddable
 public class SizeProductId implements Serializable {
     @Column(name = "id_product")
@@ -12,20 +16,4 @@ public class SizeProductId implements Serializable {
 
     @Column(name = "name_size")
     private String nameSize;
-
-    public Long getIdProduct() {
-        return idProduct;
-    }
-
-    public void setIdProduct(Long idProduct) {
-        this.idProduct = idProduct;
-    }
-
-    public String getNameSize() {
-        return nameSize;
-    }
-
-    public void setNameSize(String nameSize) {
-        this.nameSize = nameSize;
-    }
 }

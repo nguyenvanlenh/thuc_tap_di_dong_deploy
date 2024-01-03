@@ -1,11 +1,15 @@
 package com.example.api_web_ban_hang.models.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "admins")
 public class Admin {
@@ -34,68 +38,4 @@ public class Admin {
 
     @Column(name = "time_updated")
     private LocalDateTime timeUpdated;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPathImgAvatar() {
-        return pathImgAvatar;
-    }
-
-    public void setPathImgAvatar(String pathImgAvatar) {
-        this.pathImgAvatar = pathImgAvatar;
-    }
-
-    public LocalDateTime getTimeCreated() {
-        return timeCreated;
-    }
-
-    public void setTimeCreated(LocalDateTime timeCreated) {
-        this.timeCreated = timeCreated;
-    }
-
-    public LocalDateTime getTimeUpdated() {
-        return timeUpdated;
-    }
-
-    public void setTimeUpdated(LocalDateTime timeUpdated) {
-        this.timeUpdated = timeUpdated;
-    }
 }

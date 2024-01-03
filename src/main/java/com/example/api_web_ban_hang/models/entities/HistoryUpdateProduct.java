@@ -1,9 +1,13 @@
 package com.example.api_web_ban_hang.models.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "history_update_products")
 public class HistoryUpdateProduct {
@@ -18,28 +22,4 @@ public class HistoryUpdateProduct {
 
     @Column(name = "time_updated", nullable = false)
     private LocalDateTime timeUpdated;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public LocalDateTime getTimeUpdated() {
-        return timeUpdated;
-    }
-
-    public void setTimeUpdated(LocalDateTime timeUpdated) {
-        this.timeUpdated = timeUpdated;
-    }
 }

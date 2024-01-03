@@ -1,9 +1,7 @@
 package com.example.api_web_ban_hang.controllers;
 
 import java.util.Optional;
-import java.util.stream.Collectors;
 
-import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -42,12 +40,11 @@ public class ProductApi {
 
 	@GetMapping("/search")
 	public ResponseEntity<ResponseObject> findProductById(@RequestParam(name = "name") String input,
-			@RequestParam(name = "quantity", required = false) Integer quantity) {
-				return ResponseEntity.ok()
-				.body(new ResponseObject(HttpStatus.OK.name(), HttpStatus.OK.getReasonPhrase(),productService.findByNameProduct(input).stream()
-								.limit(quantity != null ? quantity : Long.MAX_VALUE)
-										.collect(Collectors.toList())
-						));
+			@PageableDefault(size = 30, page = 0) @SortDefaults({
+				@SortDefault(sort = "listedPrice", direction = Sort.Direction.DESC) }) Pageable pageable) {
+		return ResponseEntity.ok()
+				.body(new ResponseObject(HttpStatus.OK.name(), HttpStatus.OK.getReasonPhrase(),
+						productService.findByNameProduct(input, pageable)));
 	}
 
 	@GetMapping("/fitter-product-hot")

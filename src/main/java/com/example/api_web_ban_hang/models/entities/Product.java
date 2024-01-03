@@ -1,5 +1,6 @@
 package com.example.api_web_ban_hang.models.entities;
 
+import lombok.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -9,6 +10,12 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "products")
 public class Product {
@@ -55,108 +62,4 @@ public class Product {
     @OneToMany(mappedBy = "product", orphanRemoval = true, fetch = FetchType.LAZY)
     @Fetch(FetchMode.JOIN)
     private Set<SizeProduct> listSizes = new HashSet<>();
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNameProduct() {
-        return nameProduct;
-    }
-
-    public void setNameProduct(String nameProduct) {
-        this.nameProduct = nameProduct;
-    }
-
-    public int getStarReview() {
-        return starReview;
-    }
-
-    public void setStarReview(int starReview) {
-        this.starReview = starReview;
-    }
-
-    public int getIdStatusProduct() {
-        return idStatusProduct;
-    }
-
-    public void setIdStatusProduct(int idStatusProduct) {
-        this.idStatusProduct = idStatusProduct;
-    }
-
-    public BigDecimal getListedPrice() {
-        return listedPrice;
-    }
-
-    public void setListedPrice(BigDecimal listedPrice) {
-        this.listedPrice = listedPrice;
-    }
-
-    public BigDecimal getPromotionalPrice() {
-        return promotionalPrice;
-    }
-
-    public void setPromotionalPrice(BigDecimal promotionalPrice) {
-        this.promotionalPrice = promotionalPrice;
-    }
-
-    public Brand getBrand() {
-        return brand;
-    }
-
-    public void setBrand(Brand brand) {
-        this.brand = brand;
-    }
-
-    public TypeProduct getTypeProduct() {
-        return typeProduct;
-    }
-
-    public void setTypeProduct(TypeProduct typeProduct) {
-        this.typeProduct = typeProduct;
-    }
-
-    public int getIdSex() {
-        return idSex;
-    }
-
-    public void setIdSex(int idSex) {
-        this.idSex = idSex;
-    }
-
-    public LocalDateTime getTimeCreated() {
-        return timeCreated;
-    }
-
-    public void setTimeCreated(LocalDateTime timeCreated) {
-        this.timeCreated = timeCreated;
-    }
-
-    public Set<ImageProduct> getImageProducts() {
-        return imageProducts;
-    }
-
-    public void setImageProducts(Set<ImageProduct> imageProducts) {
-        this.imageProducts = imageProducts;
-    }
-
-    public Set<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(Set<Comment> comments) {
-        this.comments = comments;
-    }
-
-    public Set<SizeProduct> getListSizes() {
-        return listSizes;
-    }
-
-    public void setListSizes(Set<SizeProduct> listSizes) {
-        this.listSizes = listSizes;
-    }
 }
