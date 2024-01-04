@@ -10,9 +10,9 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class AuthRequest {
     @NotNull
-    @Length(min = 5, max = 50)
+    @Length(min = 10, max = 50)
     private String username;
     @NotNull
-    @Length(min = 5, max = 10)
+    @Length(min = 5, max = 50)
     private String password;
 }
