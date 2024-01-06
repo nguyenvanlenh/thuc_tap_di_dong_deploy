@@ -30,6 +30,7 @@ E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\c
 E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\models\OrderRequest.java
 E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\models\OrderDetailRequest.java
 E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\repos\OrderRepository.java
+E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\dto\CommentDTO.java
 E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\models\entities\ImageProduct.java
 E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\services\imp\ProductServiceImp.java
 E:\DevPrograms\GIT\api_web_ban_hang\src\main\java\com\example\api_web_ban_hang\models\entities\SizeProduct.java

@@ -83,3 +83,4 @@ com\example\api_web_ban_hang\controllers\CommentController.class
 com\example\api_web_ban_hang\models\OrderDetailRequest$OrderDetailRequestBuilder.class
 com\example\api_web_ban_hang\models\OrderRequest.class
 com\example\api_web_ban_hang\services\imp\OrderServiceImp.class
+com\example\api_web_ban_hang\dto\CommentDTO.class
